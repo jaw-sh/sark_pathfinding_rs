@@ -15,10 +15,10 @@ smallvec = "1.7.0"
 ahash = "0.7.6"
 arrayvec = "0.7.2"
 sark_grids = {path="../sark_grids_rs", version = "0.5.5"}
+bevy = {path="../bevy", version = "0.9", default-features = false, features = ["png", "bevy_winit", "render"]}
 
 
 [dev-dependencies]
-bevy = {path="../bevy", version = "0.9", default-features = false, features = ["png", "bevy_winit", "render"]}
 bevy_ascii_terminal = {path="../bevy_ascii_terminal", version="0.12" }
 noise = "0.7.0"
 

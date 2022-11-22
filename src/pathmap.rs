@@ -1,4 +1,5 @@
 use arrayvec::{ArrayVec, IntoIter};
+use bevy::prelude::Resource;
 use glam::IVec2;
 use sark_grids::{Grid, GridPoint, Size2d};
 
@@ -28,8 +29,17 @@ pub trait PathMap {
 ///
 /// let path = pf.astar(&map, [4,4], [10,10]).unwrap();
 /// ```
+#[derive(Resource)]
 pub struct PathMap2d {
-    grid: Grid<bool>,
+    pub grid: Grid<bool>,
+}
+
+impl Default for PathMap2d {
+    fn default() -> Self {
+        Self {
+            grid: Default::default()
+        }
+    }
 }
 
 impl PathMap2d {
